@@ -1,4 +1,7 @@
-# BeltExam
+#
+Deployment IP = http://18.220.178.137
+
+# My starter app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.5.
 

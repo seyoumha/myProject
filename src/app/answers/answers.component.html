@@ -1,0 +1,22 @@
+<div class = 'col-md-3 offset-md-9'>
+    <a href='#' (click)='logout()'>logout</a><br/><br/>
+  </div>
+<h1>{{question}}</h1>
+<p>{{desc}}</p>
+<div class = 'col-md-6 offset-md-1 navagation'>
+    <a [routerLink]="['']">Home</a> |  <a href='question/{{id}}/new_answer'>Answer the Question</a>
+</div>
+<table class="table">
+    <tbody>
+      <tr *ngFor='let a of answers'>
+        <td>{{a.user_answer}}<br/><br/> <span style='font-weight: bold;'>{{a.user_name}}</span></td>
+        <td >{{a.vote}} Like</td>
+        <td><button (click)='vote(a._id)'>Like</button></td>
+      </tr>
+    </tbody>
+</table>
+
+
+
+
+

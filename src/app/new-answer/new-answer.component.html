@@ -1,0 +1,33 @@
+<div class='container'>
+  <div *ngIf='errors'>{{errors}}</div>
+  <div class = 'col-md-3 offset-md-9'>
+      <a href='#' (click)='logout()'>logout</a><br/><br/>
+    </div>
+  <div class="row">
+    <div class="col-md-6">
+        <a [routerLink]="['']">Home</a>
+        <a [routerLink]= "question/'id' ">Go Back to Question</a>
+      </div>
+    <div class="col-md-12">
+      <h1>{{question}}</h1>
+      <p>{{description}}</p>
+    </div>
+
+    <form #answerForm = ngForm (submit) = 'answerQuestion()'>
+        <div class='row'>
+          <div class = 'col-md-10 '>
+            Your Answer:<span style='color: red;' *ngIf='user_answer.errors'>  Question has to be 5 characters or more</span><br/><br/>
+            <textarea required name='answer' rows="6" cols="40" [(ngModel)]= 'newAnswer.user_answer' #user_answer = 'ngModel' minlength="5" pattern="^\S+$"></textarea><br/><br/>
+          </div>
+          <div class = 'col-md-10 '>
+              Support details for you answer (optional):<br/><br/>
+              <textarea name='detail' rows="6" cols="40" [(ngModel)]= 'newAnswer.detail' #detail = 'ngModel'></textarea><br/><br/>
+            </div>
+          <div class = 'col-md-6'>
+            <button (click) = 'clear(user_answer.value, detail.value)'class = 'btn btn-info'>Clear</button>
+            <input [disabled]='!answerForm.form.valid' class = 'btn btn-success' type='submit' value='Submit'>
+          </div>
+        </div>
+      </form>
+  </div>
+</div>

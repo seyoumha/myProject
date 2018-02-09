@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { IndexComponent } from './index/index.component';
 import { SearchComponent } from './search/search.component';
+import { UserComponent } from './user/user.component';
+import { NewQuestionComponent } from './new-question/new-question.component';
+import { NewAnswerComponent } from './new-answer/new-answer.component';
+import { AnswersComponent } from './answers/answers.component';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { SearchComponent } from './search/search.component';
     AppComponent,
     ErrorPageComponent,
     IndexComponent,
-    SearchComponent
+    SearchComponent,
+    UserComponent,
+    NewQuestionComponent,
+    NewAnswerComponent,
+    AnswersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+<div *ngIf='!currentUser'>
+  <h1>You are not logged in</h1>
+</div>
+<div class = 'col-md-6 offset-md-1 navagation'>
+    <a [routerLink]="['']">Home</a>
+  </div>
+<div>
+  <h1>{{title}}</h1>
+  <div *ngIf = 'msg'>{{msg}}</div>
+  <div *ngIf = 'errors'>{{errors}}</div>
+  <form #questionForm = ngForm (submit) = 'postQuestion()'>
+    <div class='row'>
+      <div class = 'col-md-10 '>
+        Question:<span style='color: red;' *ngIf='user_question.errors'>Question has to be 10 characters or more</span><br/><br/>
+        <textarea required name='question' rows="6" cols="40" [(ngModel)]= 'newQuestion.user_question' #user_question = 'ngModel' minlength="10"></textarea>
+      </div>
+      <div class = 'col-md-10 '>
+          Description:<br/><br/>
+          <textarea name='description' rows="6" cols="40" [(ngModel)]= 'newQuestion.description' #description = 'ngModel'></textarea><br/><br/>
+        </div>
+      <div class = 'col-md-6'>
+        <button (click) = 'clear(user_question.value, description.value)'class = 'btn btn-info'>Cancle</button>
+        <input [disabled]='!questionForm.form.valid' class = 'btn btn-success' type='submit' value='Submit'>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>QA</h1>
+  <form #userForm = ngForm (submit) = 'createUser()'>
+    <div class="row">
+      <div class="col-md-3">
+          Name:
+      </div>
+      <div class="col-md-6">
+          <input type='text'  required name ='name' [(ngModel)] = newUser.name #name='ngModel'>
+          <p *ngIf = 'name.errors' style='color: red'>Please Enter User Name to continue</p>
+      </div>
+      <div class="col-md-6">
+          <input type='submit' value ='Enter' [disabled]='!userForm.form.valid'>
+      </div>
+    </div>
+  </form>
+  </div>

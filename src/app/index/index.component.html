@@ -1,29 +1,30 @@
 <div class='container'>
-  <h1>{{title}}</h1><br/>
-  <div class='row'>
-    <div class = 'col-md-3 offset-md-9'>
-      <a *ngIf = 'currentUser' href='#' (click)='logout()'>logout</a><br/><br/>
+    <h3> Hi {{currentUser.name}}</h3><br/>
+    <div class='row'>
+      <div class = 'col-md-3 offset-md-9'>
+        <a href='#' (click)='logout()'>logout</a><br/><br/>
+      </div>
+      <div class = 'col-md-3 offset-md-9'>
+        <app-search
+          (apptEventEmitter)= 'search($event)'>
+        </app-search>
+      </div>
     </div>
-    <div class = 'col-md-3 offset-md-9'>
-      <app-search
-        (apptEventEmitter)= 'search($event)'>
-      </app-search>
-    </div>
+    <div><a [routerLink]="['new_question']">Add Question</a><br/><br/></div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Question</th>
+            <th scope="col">Answers</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let q of filteredQuestions'>
+            <td>{{q.user_question}}</td>
+            <td>{{getCount(q._id)}}</td>
+            <td><a [routerLink]="['question', q._id]">Show</a>  <a [routerLink]="['question', q._id, 'new_answer']">Answer</a></td>
+          </tr>
+        </tbody>
+    </table>
   </div>
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col"></th>
-          <th scope="col"></th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr >
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-  </table>
-</div>
