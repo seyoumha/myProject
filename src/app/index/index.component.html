@@ -1,0 +1,29 @@
+<div class='container'>
+  <h1>{{title}}</h1><br/>
+  <div class='row'>
+    <div class = 'col-md-3 offset-md-9'>
+      <a *ngIf = 'currentUser' href='#' (click)='logout()'>logout</a><br/><br/>
+    </div>
+    <div class = 'col-md-3 offset-md-9'>
+      <app-search
+        (apptEventEmitter)= 'search($event)'>
+      </app-search>
+    </div>
+  </div>
+  <table class="table">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr >
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+  </table>
+</div>
