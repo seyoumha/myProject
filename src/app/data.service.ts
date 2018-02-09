@@ -18,6 +18,10 @@ export class DataService {
 
   constructor(private _http: Http) { }
 
+  logout(){
+    this.userBehaivorSubject.next(null)
+  }
+
   //Questions
   getQuestions():void{
     this._http.get('/questions').subscribe(response=>{
