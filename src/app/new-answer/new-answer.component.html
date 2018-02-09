@@ -17,7 +17,7 @@
         <div class='row'>
           <div class = 'col-md-10 '>
             Your Answer:<span style='color: red;' *ngIf='user_answer.errors'>  Question has to be 5 characters or more</span><br/><br/>
-            <textarea required name='answer' rows="6" cols="40" [(ngModel)]= 'newAnswer.user_answer' #user_answer = 'ngModel' minlength="5" pattern="^\S+$"></textarea><br/><br/>
+            <textarea required name='answer' rows="6" cols="40" [(ngModel)]= 'newAnswer.user_answer' #user_answer = 'ngModel' minlength="5"></textarea><br/><br/>
           </div>
           <div class = 'col-md-10 '>
               Support details for you answer (optional):<br/><br/>
