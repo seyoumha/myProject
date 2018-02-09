@@ -22,6 +22,12 @@ export class AnswersComponent implements OnInit {
   user =''
 
   constructor(private _dataService: DataService, private _router: Router, private _route: ActivatedRoute) { }
+  logout(){
+    console.log('here logout')
+    this._dataService.logout()
+    this._router.navigate(['/index'])
+
+  }
 
   vote(id){
     const answer = this.answers.filter(answer => answer._id == id)[0]

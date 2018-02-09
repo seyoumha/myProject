@@ -23,6 +23,13 @@ export class NewQuestionComponent implements OnInit {
     this.newQuestion = new Question();
    }
 
+   logout(){
+    console.log('here logout')
+    this._dataService.logout()
+    this._router.navigate(['/index'])
+
+  }
+
    postQuestion(){
     this.newQuestion.user_name = this.currentUser
     this._dataService.postQuestion(this.newQuestion).subscribe(question=>{
